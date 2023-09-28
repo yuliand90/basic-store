@@ -22,7 +22,7 @@ export const products = [
     id: 3,
     name: 'Pixel 4a',
     price: 500,
-    description: 'Flafship de Google a un precio asequible'
+    description: ''
   },
   {
     id: 4,
