@@ -1,6 +1,38 @@
 <h2>Products</h2>
 
+<!-- mostrar los productos-->
+<div *ngFor="let product of products">
+    <h3>
+        <!-- mostrar el detalle de los productos al estar encima del titulo-->
+    <a [title]="product.name+ ' detalles'"
+        [routerLink]=" [ '/products', product.id] " >
+    {{product.name}}
+    </a>
+       
+    </h3>
+    <p>
+        <!-- muestra el precio del producto-->
+        Precio: {{product.price | currency }}
+    </p>
+    <!-- el * significa el llamado de una directiva mostrar la descripcion hace una validación sin cadenas vacias como el pixel 4a-->
+    <p *ngIf="product.description">
+        Descripción:{{product.description}}
+    </p>
+    <!-- disparamos el alert de share una funcionalidad-->
+    <button type="button" (click)="share(product.name)">
+        Compartir
+    </button>
 
+         <!-- dentregan y extraen informacion-->
+    <app-product-alerts 
+        [product]="product"
+        (notify)="onNotify()" >
+    </app-product-alerts>
+
+    <button type="button" [routerLink]="[ '/products', product.id] ">
+        Detalle
+    </button>
+</div>
 <!-- 
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that

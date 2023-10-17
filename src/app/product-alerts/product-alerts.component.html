@@ -1,0 +1,4 @@
+<p *ngIf="product && product.price > 700">
+    <!-- que me notifique si el producto cuesta mas de 700, notify va emitir un evento, escucha en product list.ts-->
+    <button type="button" (click)="notify.emit()">Notificame</button>
+</p>

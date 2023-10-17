@@ -10,8 +10,11 @@ import { products } from '../products';
 export class ProductListComponent {
   products = [...products];
 
-  share() {
-    window.alert('El producto se ha compartido');
+  share(nombre: string) {
+    window.alert('El producto '+ nombre +' se ha compartido');
+  }
+  onNotify(){
+    window.alert('Se le notificará cuando el producto salga a la venta ');
   }
 }
 
