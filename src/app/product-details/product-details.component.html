@@ -13,6 +13,9 @@
         Descripción: {{product.description}}
 
     </p>
+    <button type="button" (click)="addToCart(product)">
+        Agregar al carrito
+    </button>
 
     <img [src]="product.photo" [alt]="product.name">
 </div>

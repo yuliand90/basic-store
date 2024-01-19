@@ -9,6 +9,6 @@ import { Product } from '../products';
 export class ProductAlertsComponent {
   @Input() product: Product | undefined;
   @Output() notify = new EventEmitter();
-  //mi padre  product-list.component.ts va poder acceer a mi información con el Output, notify es una instancia de un objeto, emitir eventos
+  //mi padre  product-list.component.ts va poder acceder a mi información con el Output, notify es una instancia de un objeto, emitir eventos
 
 }

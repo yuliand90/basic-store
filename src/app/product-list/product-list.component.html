@@ -2,9 +2,11 @@
 
 <!-- mostrar los productos-->
 <div *ngFor="let product of products">
+    <!-- ngFor es para que se muestre todos los productos con una variable let-->
     <h3>
         <!-- mostrar el detalle de los productos al estar encima del titulo-->
-    <a [title]="product.name+ ' detalles'"
+    <!-- variable tittle product.name para agregar un link-->
+    <a [title]="product.name + ' detalles'"
         [routerLink]=" [ '/products', product.id] " >
     {{product.name}}
     </a>
@@ -18,12 +20,12 @@
     <p *ngIf="product.description">
         Descripción:{{product.description}}
     </p>
-    <!-- disparamos el alert de share una funcionalidad-->
+    <!-- disparamos el alert de share compartir una funcionalidad-->
     <button type="button" (click)="share(product.name)">
         Compartir
     </button>
 
-         <!-- dentregan y extraen informacion-->
+         <!-- entregan y extraen informacion padre - hijo-->
     <app-product-alerts 
         [product]="product"
         (notify)="onNotify()" >
